@@ -1,0 +1,33 @@
+踩坑记录：
+2bit 6bit部分：
+
+prepare只会在成Module的实例下添加observer，因此Resnet和MobileNetV2中的shortcut结构在“加”的时候不能直接加（否则prepare函数不知道在哪里添加observer），而必须实例化一个“算数类”（torch.ao.nn.quantized.FloatFunctional）作为模型成员，然后调用该成员做加法。（详见代码实现中arith成员）
+
+torch/quantization/observer.py:131: UserWarning: must run observer before calling calculate_qparams.                                    Returning default scale and zero point 
+如果prepared的模型中有的observer没有被使用就会出现此条警告。当然，由于没有使用直接忽略这条警告就行。本实验中遇到的情况是在没使用shortcut的blk中也构建了算数类，prepare函数无区别地为其附加了observer，但没有数据流过该observer当然就不会统计到任何东西（min=-inf，max=inf）
+
+ptsq fusion中bn会直接折算到其前/后的linear或conv层weight，因此消失；如果和activation fusion则没法折算，就会保留。注意qat中fusion时不能如此消去bn，因为还需要更新
+
+bit数在qconfig设置；如果只是一半的8bit可以用默认设置，注意由于向量指令硬件实现问题其实是7bit
+
+要在forward插入QuantStub()和DeQuantStub()否则Could not run 'quantized::conv2d.new' with arguments from the 'CPU' backend. This could be because the operator doesn't exist for this backend, or was omitted during the selective/custom build process (if using custom build).
+
+scheduler有现成的ReduceLROnPlateau，配合sgd好用
+
+fusion只能针对部分固定组合，差一点都不行；但维度无所谓，参见https://pytorch.org/tutorials/recipes/fuse.html
+
+fusion列表中Sequential的表示方法：[['XX.0','XX.1',...],...]，参见https://discuss.pytorch.org/t/fuse-modules-how-to-fuse-modules-in-the-sequential-block/140423
+
+这个实现没用fakequantize，但实际也是fakequantize——用8bit整数来模拟更低bit数的整数；这个实现中没有量化梯度（因为本来就是ptq）
+
+MobileNet中conv的group理解：https://discuss.pytorch.org/t/understanding-the-conv2d-groups-parameter/138951/2
+
+torch的doc写得其实不太好，找到的几则中文资料反而更清楚
+
+原则上第一层和最后一层都不应量化，不过本实现忘了这件事（悲
+
+reproduce
+
+关于dorefanet：它关于grad quant的办法仅在没有shortcut时有效（然而它resnet-dorefa的实现里面还装作无事发生一样取了nbits_G参数😅，怪不得论文里不用resnet而用自建网络讨论
+
+静态成员函数不需要self参数，但torch的自定义forward方法若为静态则必须把第一个参数指定为ctx（context），用于传输有用的信息
