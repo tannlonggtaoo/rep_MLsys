@@ -1,0 +1,646 @@
+resnet:
+[sys] bitW 2, bitA 2, bitG 2 ------------------------------------
+Files already downloaded and verified
+Files already downloaded and verified
+[Train] Epoch: 0 [12288/50000] Loss: 1.992238
+[Train] Epoch: 0 [24832/50000] Loss: 1.946371
+[Train] Epoch: 0 [37376/50000] Loss: 1.967189
+[Train] Epoch: 0 [15600/50000] Loss: 2.046073
+[Test] Average loss: 1.937 Accuracy: 2957/10000 (29.570%)
+
+[sys] Model saved @ epoch 0...
+
+[Train] Epoch: 1 [12288/50000] Loss: 1.903279
+[Train] Epoch: 1 [24832/50000] Loss: 1.859259
+[Train] Epoch: 1 [37376/50000] Loss: 1.833626
+[Train] Epoch: 1 [15600/50000] Loss: 1.762821
+[Test] Average loss: 1.827 Accuracy: 3283/10000 (32.830%)
+
+[sys] Model saved @ epoch 1...
+
+[Train] Epoch: 2 [12288/50000] Loss: 1.897474
+[Train] Epoch: 2 [24832/50000] Loss: 1.723085
+[Train] Epoch: 2 [37376/50000] Loss: 1.747815
+[Train] Epoch: 2 [15600/50000] Loss: 1.703640
+[Test] Average loss: 1.938 Accuracy: 3122/10000 (31.220%)
+
+[sys] Model saved @ epoch 2...
+
+[Train] Epoch: 3 [12288/50000] Loss: 1.830942
+[Train] Epoch: 3 [24832/50000] Loss: 1.763353
+[Train] Epoch: 3 [37376/50000] Loss: 1.740028
+[Train] Epoch: 3 [15600/50000] Loss: 1.812920
+[Test] Average loss: 1.858 Accuracy: 3218/10000 (32.180%)
+
+[sys] Model saved @ epoch 3...
+
+[Train] Epoch: 4 [12288/50000] Loss: 1.777035
+[Train] Epoch: 4 [24832/50000] Loss: 1.615585
+[Train] Epoch: 4 [37376/50000] Loss: 1.776020
+[Train] Epoch: 4 [15600/50000] Loss: 1.919771
+[Test] Average loss: 2.616 Accuracy: 2069/10000 (20.690%)
+
+[sys] Model saved @ epoch 4...
+
+[Train] Epoch: 5 [12288/50000] Loss: 1.733590
+[Train] Epoch: 5 [24832/50000] Loss: 1.778043
+[Train] Epoch: 5 [37376/50000] Loss: 1.685017
+[Train] Epoch: 5 [15600/50000] Loss: 1.681795
+[Test] Average loss: 2.106 Accuracy: 2717/10000 (27.170%)
+
+[sys] Model saved @ epoch 5...
+
+[Train] Epoch: 6 [12288/50000] Loss: 1.798048
+[Train] Epoch: 6 [24832/50000] Loss: 1.653835
+[Train] Epoch: 6 [37376/50000] Loss: 1.708970
+[Train] Epoch: 6 [15600/50000] Loss: 1.736755
+[Test] Average loss: 2.592 Accuracy: 2102/10000 (21.020%)
+
+[sys] Model saved @ epoch 6...
+
+[Train] Epoch: 7 [12288/50000] Loss: 1.669532
+[Train] Epoch: 7 [24832/50000] Loss: 1.819864
+[Train] Epoch: 7 [37376/50000] Loss: 1.807617
+[Train] Epoch: 7 [15600/50000] Loss: 1.923615
+[Test] Average loss: 2.963 Accuracy: 1565/10000 (15.650%)
+
+[sys] Model saved @ epoch 7...
+
+[Train] Epoch: 8 [12288/50000] Loss: 1.827006
+[Train] Epoch: 8 [24832/50000] Loss: 1.897135
+[Train] Epoch: 8 [37376/50000] Loss: 1.771754
+[Train] Epoch: 8 [15600/50000] Loss: 1.658104
+[Test] Average loss: 3.327 Accuracy: 1649/10000 (16.490%)
+
+[sys] Model saved @ epoch 8...
+
+[Train] Epoch: 9 [12288/50000] Loss: 1.916593
+[Train] Epoch: 9 [24832/50000] Loss: 1.780228
+[Train] Epoch: 9 [37376/50000] Loss: 1.808796
+[Train] Epoch: 9 [15600/50000] Loss: 1.758464
+[Test] Average loss: 2.748 Accuracy: 1275/10000 (12.750%)
+
+[sys] Model saved @ epoch 9...
+
+[Train] Epoch: 10 [12288/50000] Loss: 1.803373
+[Train] Epoch: 10 [24832/50000] Loss: 1.856975
+[Train] Epoch: 10 [37376/50000] Loss: 1.885579
+[Train] Epoch: 10 [15600/50000] Loss: 1.827621
+[Test] Average loss: 2.599 Accuracy: 1554/10000 (15.540%)
+
+[sys] Model saved @ epoch 10...
+
+[Train] Epoch: 11 [12288/50000] Loss: 1.817258
+[Train] Epoch: 11 [24832/50000] Loss: 1.828866
+[Train] Epoch: 11 [37376/50000] Loss: 1.712018
+[Train] Epoch: 11 [15600/50000] Loss: 1.865514
+[Test] Average loss: 6.415 Accuracy: 1000/10000 (10.000%)
+
+[sys] Model saved @ epoch 11...
+
+[Train] Epoch: 12 [12288/50000] Loss: 1.982211
+[Train] Epoch: 12 [24832/50000] Loss: 1.942277
+[Train] Epoch: 12 [37376/50000] Loss: 1.968656
+[Train] Epoch: 12 [15600/50000] Loss: 2.033152
+[Test] Average loss: 4.029 Accuracy: 1219/10000 (12.190%)
+
+[sys] Model saved @ epoch 12...
+
+[Train] Epoch: 13 [12288/50000] Loss: 2.000221
+[Train] Epoch: 13 [24832/50000] Loss: 2.054833
+[Train] Epoch: 13 [37376/50000] Loss: 1.867975
+[Train] Epoch: 13 [15600/50000] Loss: 1.834789
+[Test] Average loss: 4.211 Accuracy: 1313/10000 (13.130%)
+
+[sys] Model saved @ epoch 13...
+
+[Train] Epoch: 14 [12288/50000] Loss: 1.954974
+[Train] Epoch: 14 [24832/50000] Loss: 1.984462
+[Train] Epoch: 14 [37376/50000] Loss: 1.941704
+[Train] Epoch: 14 [15600/50000] Loss: 2.113964
+[Test] Average loss: 3.110 Accuracy: 1134/10000 (11.340%)
+
+[sys] Model saved @ epoch 14...
+
+[Train] Epoch: 15 [12288/50000] Loss: 1.954080
+[Train] Epoch: 15 [24832/50000] Loss: 1.986935
+[Train] Epoch: 15 [37376/50000] Loss: 1.977940
+[Train] Epoch: 15 [15600/50000] Loss: 2.114104
+[Test] Average loss: 2.094 Accuracy: 2340/10000 (23.400%)
+
+[sys] Model saved @ epoch 15...
+
+[Train] Epoch: 16 [12288/50000] Loss: 2.145570
+[Train] Epoch: 16 [24832/50000] Loss: 1.965298
+[Train] Epoch: 16 [37376/50000] Loss: 2.168127
+[Train] Epoch: 16 [15600/50000] Loss: 2.032032
+[Test] Average loss: 3.164 Accuracy: 1128/10000 (11.280%)
+
+[sys] Model saved @ epoch 16...
+
+[Train] Epoch: 17 [12288/50000] Loss: 2.041436
+[Train] Epoch: 17 [24832/50000] Loss: 2.102084
+[Train] Epoch: 17 [37376/50000] Loss: 2.189348
+[Train] Epoch: 17 [15600/50000] Loss: 1.982625
+[Test] Average loss: 3.136 Accuracy: 1036/10000 (10.360%)
+
+[sys] Model saved @ epoch 17...
+
+[Train] Epoch: 18 [12288/50000] Loss: 1.976787
+[Train] Epoch: 18 [24832/50000] Loss: 2.048999
+[Train] Epoch: 18 [37376/50000] Loss: 2.072383
+[Train] Epoch: 18 [15600/50000] Loss: 2.234667
+[Test] Average loss: 2.512 Accuracy: 1862/10000 (18.620%)
+
+[sys] Model saved @ epoch 18...
+
+[Train] Epoch: 19 [12288/50000] Loss: 2.043199
+[Train] Epoch: 19 [24832/50000] Loss: 2.072251
+[Train] Epoch: 19 [37376/50000] Loss: 2.062583
+[Train] Epoch: 19 [15600/50000] Loss: 2.034392
+[Test] Average loss: 3.303 Accuracy: 1642/10000 (16.420%)
+
+[sys] Model saved @ epoch 19...
+
+[Train] Epoch: 20 [12288/50000] Loss: 1.976840
+[Train] Epoch: 20 [24832/50000] Loss: 2.059282
+[Train] Epoch: 20 [37376/50000] Loss: 1.991571
+[Train] Epoch: 20 [15600/50000] Loss: 1.907796
+[Test] Average loss: 2.101 Accuracy: 2442/10000 (24.420%)
+
+[sys] Model saved @ epoch 20...
+
+[Train] Epoch: 21 [12288/50000] Loss: 2.000139
+[Train] Epoch: 21 [24832/50000] Loss: 1.948442
+[Train] Epoch: 21 [37376/50000] Loss: 1.989349
+[Train] Epoch: 21 [15600/50000] Loss: 1.799510
+[Test] Average loss: 2.135 Accuracy: 2382/10000 (23.820%)
+
+[sys] Model saved @ epoch 21...
+
+[Train] Epoch: 22 [12288/50000] Loss: 1.985881
+[Train] Epoch: 22 [24832/50000] Loss: 2.001967
+[Train] Epoch: 22 [37376/50000] Loss: 2.035146
+[Train] Epoch: 22 [15600/50000] Loss: 2.000344
+[Test] Average loss: 1.978 Accuracy: 2836/10000 (28.360%)
+
+[sys] Model saved @ epoch 22...
+
+[Train] Epoch: 23 [12288/50000] Loss: 2.004137
+[Train] Epoch: 23 [24832/50000] Loss: 1.919873
+[Train] Epoch: 23 [37376/50000] Loss: 1.949644
+[Train] Epoch: 23 [15600/50000] Loss: 1.967329
+[Test] Average loss: 2.247 Accuracy: 2336/10000 (23.360%)
+
+[sys] Model saved @ epoch 23...
+
+[Train] Epoch: 24 [12288/50000] Loss: 1.912514
+[Train] Epoch: 24 [24832/50000] Loss: 1.994660
+[Train] Epoch: 24 [37376/50000] Loss: 1.980886
+[Train] Epoch: 24 [15600/50000] Loss: 1.995500
+[Test] Average loss: 2.220 Accuracy: 1999/10000 (19.990%)
+
+[sys] Model saved @ epoch 24...
+
+[Train] Epoch: 25 [12288/50000] Loss: 1.976541
+[Train] Epoch: 25 [24832/50000] Loss: 1.973266
+[Train] Epoch: 25 [37376/50000] Loss: 1.972373
+[Train] Epoch: 25 [15600/50000] Loss: 1.933542
+[Test] Average loss: 2.267 Accuracy: 2259/10000 (22.590%)
+
+[sys] Model saved @ epoch 25...
+
+[Train] Epoch: 26 [12288/50000] Loss: 1.952834
+[Train] Epoch: 26 [24832/50000] Loss: 1.969370
+[Train] Epoch: 26 [37376/50000] Loss: 1.865838
+[Train] Epoch: 26 [15600/50000] Loss: 1.938241
+[Test] Average loss: 2.288 Accuracy: 2347/10000 (23.470%)
+
+[sys] Model saved @ epoch 26...
+
+[Train] Epoch: 27 [12288/50000] Loss: 1.844097
+[Train] Epoch: 27 [24832/50000] Loss: 1.978564
+[Train] Epoch: 27 [37376/50000] Loss: 2.019604
+[Train] Epoch: 27 [15600/50000] Loss: 1.975209
+[Test] Average loss: 2.953 Accuracy: 1219/10000 (12.190%)
+
+[sys] Model saved @ epoch 27...
+
+[Train] Epoch: 28 [12288/50000] Loss: 1.982947
+[Train] Epoch: 28 [24832/50000] Loss: 1.865040
+[Train] Epoch: 28 [37376/50000] Loss: 1.938465
+[Train] Epoch: 28 [15600/50000] Loss: 1.962046
+[Test] Average loss: 2.295 Accuracy: 1855/10000 (18.550%)
+
+[sys] Model saved @ epoch 28...
+
+[Train] Epoch: 29 [12288/50000] Loss: 1.870715
+[Train] Epoch: 29 [24832/50000] Loss: 1.878905
+[Train] Epoch: 29 [37376/50000] Loss: 1.902184
+[Train] Epoch: 29 [15600/50000] Loss: 2.012829
+[Test] Average loss: 2.081 Accuracy: 2472/10000 (24.720%)
+
+[sys] Model saved @ epoch 29...
+
+[Train] Epoch: 30 [12288/50000] Loss: 1.878439
+[Train] Epoch: 30 [24832/50000] Loss: 1.924558
+[Train] Epoch: 30 [37376/50000] Loss: 2.004066
+[Train] Epoch: 30 [15600/50000] Loss: 2.094846
+[Test] Average loss: 2.817 Accuracy: 1321/10000 (13.210%)
+
+[sys] Model saved @ epoch 30...
+
+[Train] Epoch: 31 [12288/50000] Loss: 2.038923
+[Train] Epoch: 31 [24832/50000] Loss: 1.947061
+[Train] Epoch: 31 [37376/50000] Loss: 1.929952
+[Train] Epoch: 31 [15600/50000] Loss: 1.970495
+[Test] Average loss: 2.093 Accuracy: 2494/10000 (24.940%)
+
+[sys] Model saved @ epoch 31...
+
+[Train] Epoch: 32 [12288/50000] Loss: 1.920046
+[Train] Epoch: 32 [24832/50000] Loss: 1.892013
+[Train] Epoch: 32 [37376/50000] Loss: 1.935190
+[Train] Epoch: 32 [15600/50000] Loss: 1.818598
+[Test] Average loss: 2.127 Accuracy: 2497/10000 (24.970%)
+
+[sys] Model saved @ epoch 32...
+
+[Train] Epoch: 33 [12288/50000] Loss: 1.922767
+[Train] Epoch: 33 [24832/50000] Loss: 1.970779
+[Train] Epoch: 33 [37376/50000] Loss: 2.011827
+[Train] Epoch: 33 [15600/50000] Loss: 1.965164
+[Test] Average loss: 1.947 Accuracy: 2853/10000 (28.530%)
+
+[sys] Model saved @ epoch 33...
+
+[Train] Epoch: 34 [12288/50000] Loss: 1.880280
+[Train] Epoch: 34 [24832/50000] Loss: 1.997075
+[Train] Epoch: 34 [37376/50000] Loss: 1.892994
+[Train] Epoch: 34 [15600/50000] Loss: 1.895488
+[Test] Average loss: 3.634 Accuracy: 1512/10000 (15.120%)
+
+[sys] Model saved @ epoch 34...
+
+[Train] Epoch: 35 [12288/50000] Loss: 1.967368
+[Train] Epoch: 35 [24832/50000] Loss: 1.909363
+[Train] Epoch: 35 [37376/50000] Loss: 1.924413
+[Train] Epoch: 35 [15600/50000] Loss: 2.001636
+[Test] Average loss: 2.702 Accuracy: 1790/10000 (17.900%)
+
+[sys] Model saved @ epoch 35...
+
+[Train] Epoch: 36 [12288/50000] Loss: 2.035403
+[Train] Epoch: 36 [24832/50000] Loss: 1.864678
+[Train] Epoch: 36 [37376/50000] Loss: 1.975365
+[Train] Epoch: 36 [15600/50000] Loss: 1.967736
+[Test] Average loss: 1.923 Accuracy: 2938/10000 (29.380%)
+
+[sys] Model saved @ epoch 36...
+
+[Train] Epoch: 37 [12288/50000] Loss: 1.939527
+[Train] Epoch: 37 [24832/50000] Loss: 1.903100
+[Train] Epoch: 37 [37376/50000] Loss: 1.969296
+[Train] Epoch: 37 [15600/50000] Loss: 1.905905
+[Test] Average loss: 1.932 Accuracy: 3030/10000 (30.300%)
+
+[sys] Model saved @ epoch 37...
+
+[Train] Epoch: 38 [12288/50000] Loss: 1.846614
+[Train] Epoch: 38 [24832/50000] Loss: 1.910635
+[Train] Epoch: 38 [37376/50000] Loss: 2.016033
+[Train] Epoch: 38 [15600/50000] Loss: 1.941701
+[Test] Average loss: 2.367 Accuracy: 2172/10000 (21.720%)
+
+[sys] Model saved @ epoch 38...
+
+[Train] Epoch: 39 [12288/50000] Loss: 1.922827
+[Train] Epoch: 39 [24832/50000] Loss: 1.823037
+[Train] Epoch: 39 [37376/50000] Loss: 1.885639
+[Train] Epoch: 39 [15600/50000] Loss: 1.976651
+[Test] Average loss: 2.738 Accuracy: 1919/10000 (19.190%)
+
+[sys] Model saved @ epoch 39...
+
+[sys] bitW 6, bitA 6, bitG 6 ------------------------------------
+Files already downloaded and verified
+Files already downloaded and verified
+[Train] Epoch: 0 [12288/50000] Loss: 2.121180
+[Train] Epoch: 0 [24832/50000] Loss: 1.911100
+[Train] Epoch: 0 [37376/50000] Loss: 1.842998
+[Train] Epoch: 0 [15600/50000] Loss: 1.775068
+[Test] Average loss: 1.985 Accuracy: 3053/10000 (30.530%)
+
+[sys] Model saved @ epoch 0...
+
+[Train] Epoch: 1 [12288/50000] Loss: 1.643682
+[Train] Epoch: 1 [24832/50000] Loss: 1.670661
+[Train] Epoch: 1 [37376/50000] Loss: 1.489189
+[Train] Epoch: 1 [15600/50000] Loss: 1.469645
+[Test] Average loss: 1.647 Accuracy: 3892/10000 (38.920%)
+
+[sys] Model saved @ epoch 1...
+
+[Train] Epoch: 2 [12288/50000] Loss: 1.577632
+[Train] Epoch: 2 [24832/50000] Loss: 1.475589
+[Train] Epoch: 2 [37376/50000] Loss: 1.624075
+[Train] Epoch: 2 [15600/50000] Loss: 1.141812
+[Test] Average loss: 1.476 Accuracy: 4706/10000 (47.060%)
+
+[sys] Model saved @ epoch 2...
+
+[Train] Epoch: 3 [12288/50000] Loss: 1.281654
+[Train] Epoch: 3 [24832/50000] Loss: 1.375449
+[Train] Epoch: 3 [37376/50000] Loss: 1.276944
+[Train] Epoch: 3 [15600/50000] Loss: 1.174956
+[Test] Average loss: 1.491 Accuracy: 4696/10000 (46.960%)
+
+[sys] Model saved @ epoch 3...
+
+[Train] Epoch: 4 [12288/50000] Loss: 1.110669
+[Train] Epoch: 4 [24832/50000] Loss: 1.211371
+[Train] Epoch: 4 [37376/50000] Loss: 1.185751
+[Train] Epoch: 4 [15600/50000] Loss: 1.027040
+[Test] Average loss: 1.314 Accuracy: 5267/10000 (52.670%)
+
+[sys] Model saved @ epoch 4...
+
+[Train] Epoch: 5 [12288/50000] Loss: 1.128562
+[Train] Epoch: 5 [24832/50000] Loss: 1.101924
+[Train] Epoch: 5 [37376/50000] Loss: 1.065967
+[Train] Epoch: 5 [15600/50000] Loss: 1.023379
+[Test] Average loss: 1.363 Accuracy: 5261/10000 (52.610%)
+
+[sys] Model saved @ epoch 5...
+
+[Train] Epoch: 6 [12288/50000] Loss: 1.049878
+[Train] Epoch: 6 [24832/50000] Loss: 1.002790
+[Train] Epoch: 6 [37376/50000] Loss: 0.971138
+[Train] Epoch: 6 [15600/50000] Loss: 1.031483
+[Test] Average loss: 1.768 Accuracy: 4686/10000 (46.860%)
+
+[sys] Model saved @ epoch 6...
+
+[Train] Epoch: 7 [12288/50000] Loss: 0.898583
+[Train] Epoch: 7 [24832/50000] Loss: 0.914220
+[Train] Epoch: 7 [37376/50000] Loss: 0.920868
+[Train] Epoch: 7 [15600/50000] Loss: 0.867476
+[Test] Average loss: 1.396 Accuracy: 5226/10000 (52.260%)
+
+[sys] Model saved @ epoch 7...
+
+[Train] Epoch: 8 [12288/50000] Loss: 0.994128
+[Train] Epoch: 8 [24832/50000] Loss: 0.768724
+[Train] Epoch: 8 [37376/50000] Loss: 0.715839
+[Train] Epoch: 8 [15600/50000] Loss: 0.782972
+[Test] Average loss: 1.268 Accuracy: 6138/10000 (61.380%)
+
+[sys] Model saved @ epoch 8...
+
+[Train] Epoch: 9 [12288/50000] Loss: 0.779940
+[Train] Epoch: 9 [24832/50000] Loss: 0.804920
+[Train] Epoch: 9 [37376/50000] Loss: 0.826687
+[Train] Epoch: 9 [15600/50000] Loss: 0.783551
+[Test] Average loss: 1.052 Accuracy: 6206/10000 (62.060%)
+
+[sys] Model saved @ epoch 9...
+
+[Train] Epoch: 10 [12288/50000] Loss: 0.797490
+[Train] Epoch: 10 [24832/50000] Loss: 0.741658
+[Train] Epoch: 10 [37376/50000] Loss: 0.693639
+[Train] Epoch: 10 [15600/50000] Loss: 0.821550
+[Test] Average loss: 1.139 Accuracy: 6315/10000 (63.150%)
+
+[sys] Model saved @ epoch 10...
+
+[Train] Epoch: 11 [12288/50000] Loss: 0.530452
+[Train] Epoch: 11 [24832/50000] Loss: 0.677837
+[Train] Epoch: 11 [37376/50000] Loss: 0.742343
+[Train] Epoch: 11 [15600/50000] Loss: 0.754784
+[Test] Average loss: 1.009 Accuracy: 6756/10000 (67.560%)
+
+[sys] Model saved @ epoch 11...
+
+[Train] Epoch: 12 [12288/50000] Loss: 0.648376
+[Train] Epoch: 12 [24832/50000] Loss: 0.534887
+[Train] Epoch: 12 [37376/50000] Loss: 0.718596
+[Train] Epoch: 12 [15600/50000] Loss: 0.623538
+[Test] Average loss: 0.859 Accuracy: 7062/10000 (70.620%)
+
+[sys] Model saved @ epoch 12...
+
+[Train] Epoch: 13 [12288/50000] Loss: 0.647811
+[Train] Epoch: 13 [24832/50000] Loss: 0.677926
+[Train] Epoch: 13 [37376/50000] Loss: 0.563356
+[Train] Epoch: 13 [15600/50000] Loss: 0.619384
+[Test] Average loss: 0.736 Accuracy: 7395/10000 (73.950%)
+
+[sys] Model saved @ epoch 13...
+
+[Train] Epoch: 14 [12288/50000] Loss: 0.582141
+[Train] Epoch: 14 [24832/50000] Loss: 0.535431
+[Train] Epoch: 14 [37376/50000] Loss: 0.625321
+[Train] Epoch: 14 [15600/50000] Loss: 0.588045
+[Test] Average loss: 0.697 Accuracy: 7560/10000 (75.600%)
+
+[sys] Model saved @ epoch 14...
+
+[Train] Epoch: 15 [12288/50000] Loss: 0.559169
+[Train] Epoch: 15 [24832/50000] Loss: 0.527267
+[Train] Epoch: 15 [37376/50000] Loss: 0.455516
+[Train] Epoch: 15 [15600/50000] Loss: 0.816652
+[Test] Average loss: 0.890 Accuracy: 7019/10000 (70.190%)
+
+[sys] Model saved @ epoch 15...
+
+[Train] Epoch: 16 [12288/50000] Loss: 0.502549
+[Train] Epoch: 16 [24832/50000] Loss: 0.548972
+[Train] Epoch: 16 [37376/50000] Loss: 0.550319
+[Train] Epoch: 16 [15600/50000] Loss: 0.519222
+[Test] Average loss: 0.712 Accuracy: 7800/10000 (78.000%)
+
+[sys] Model saved @ epoch 16...
+
+[Train] Epoch: 17 [12288/50000] Loss: 0.516319
+[Train] Epoch: 17 [24832/50000] Loss: 0.478352
+[Train] Epoch: 17 [37376/50000] Loss: 0.546250
+[Train] Epoch: 17 [15600/50000] Loss: 0.445550
+[Test] Average loss: 0.745 Accuracy: 7643/10000 (76.430%)
+
+[sys] Model saved @ epoch 17...
+
+[Train] Epoch: 18 [12288/50000] Loss: 0.411294
+[Train] Epoch: 18 [24832/50000] Loss: 0.493227
+[Train] Epoch: 18 [37376/50000] Loss: 0.506153
+[Train] Epoch: 18 [15600/50000] Loss: 0.556040
+[Test] Average loss: 0.682 Accuracy: 7646/10000 (76.460%)
+
+[sys] Model saved @ epoch 18...
+
+[Train] Epoch: 19 [12288/50000] Loss: 0.474430
+[Train] Epoch: 19 [24832/50000] Loss: 0.419653
+[Train] Epoch: 19 [37376/50000] Loss: 0.412368
+[Train] Epoch: 19 [15600/50000] Loss: 0.387655
+[Test] Average loss: 0.628 Accuracy: 7888/10000 (78.880%)
+
+[sys] Model saved @ epoch 19...
+
+[Train] Epoch: 20 [12288/50000] Loss: 0.314445
+[Train] Epoch: 20 [24832/50000] Loss: 0.321074
+[Train] Epoch: 20 [37376/50000] Loss: 0.281579
+[Train] Epoch: 20 [15600/50000] Loss: 0.231836
+[Test] Average loss: 0.369 Accuracy: 8750/10000 (87.500%)
+
+[sys] Model saved @ epoch 20...
+
+[Train] Epoch: 21 [12288/50000] Loss: 0.330216
+[Train] Epoch: 21 [24832/50000] Loss: 0.264162
+[Train] Epoch: 21 [37376/50000] Loss: 0.300925
+[Train] Epoch: 21 [15600/50000] Loss: 0.305434
+[Test] Average loss: 0.343 Accuracy: 8846/10000 (88.460%)
+
+[sys] Model saved @ epoch 21...
+
+[Train] Epoch: 22 [12288/50000] Loss: 0.321198
+[Train] Epoch: 22 [24832/50000] Loss: 0.373206
+[Train] Epoch: 22 [37376/50000] Loss: 0.281310
+[Train] Epoch: 22 [15600/50000] Loss: 0.323718
+[Test] Average loss: 0.350 Accuracy: 8840/10000 (88.400%)
+
+[sys] Model saved @ epoch 22...
+
+[Train] Epoch: 23 [12288/50000] Loss: 0.141867
+[Train] Epoch: 23 [24832/50000] Loss: 0.271333
+[Train] Epoch: 23 [37376/50000] Loss: 0.329638
+[Train] Epoch: 23 [15600/50000] Loss: 0.231832
+[Test] Average loss: 0.334 Accuracy: 8880/10000 (88.800%)
+
+[sys] Model saved @ epoch 23...
+
+[Train] Epoch: 24 [12288/50000] Loss: 0.253998
+[Train] Epoch: 24 [24832/50000] Loss: 0.232358
+[Train] Epoch: 24 [37376/50000] Loss: 0.283529
+[Train] Epoch: 24 [15600/50000] Loss: 0.315051
+[Test] Average loss: 0.332 Accuracy: 8911/10000 (89.110%)
+
+[sys] Model saved @ epoch 24...
+
+[Train] Epoch: 25 [12288/50000] Loss: 0.233574
+[Train] Epoch: 25 [24832/50000] Loss: 0.255841
+[Train] Epoch: 25 [37376/50000] Loss: 0.235255
+[Train] Epoch: 25 [15600/50000] Loss: 0.316352
+[Test] Average loss: 0.330 Accuracy: 8897/10000 (88.970%)
+
+[sys] Model saved @ epoch 25...
+
+[Train] Epoch: 26 [12288/50000] Loss: 0.175398
+[Train] Epoch: 26 [24832/50000] Loss: 0.243119
+[Train] Epoch: 26 [37376/50000] Loss: 0.286139
+[Train] Epoch: 26 [15600/50000] Loss: 0.222179
+[Test] Average loss: 0.349 Accuracy: 8861/10000 (88.610%)
+
+[sys] Model saved @ epoch 26...
+
+[Train] Epoch: 27 [12288/50000] Loss: 0.198427
+[Train] Epoch: 27 [24832/50000] Loss: 0.197445
+[Train] Epoch: 27 [37376/50000] Loss: 0.206641
+[Train] Epoch: 27 [15600/50000] Loss: 0.400517
+[Test] Average loss: 0.345 Accuracy: 8904/10000 (89.040%)
+
+[sys] Model saved @ epoch 27...
+
+[Train] Epoch: 28 [12288/50000] Loss: 0.193750
+[Train] Epoch: 28 [24832/50000] Loss: 0.221255
+[Train] Epoch: 28 [37376/50000] Loss: 0.209542
+[Train] Epoch: 28 [15600/50000] Loss: 0.204045
+[Test] Average loss: 0.333 Accuracy: 8924/10000 (89.240%)
+
+[sys] Model saved @ epoch 28...
+
+[Train] Epoch: 29 [12288/50000] Loss: 0.233777
+[Train] Epoch: 29 [24832/50000] Loss: 0.162599
+[Train] Epoch: 29 [37376/50000] Loss: 0.162837
+[Train] Epoch: 29 [15600/50000] Loss: 0.306902
+[Test] Average loss: 0.380 Accuracy: 8812/10000 (88.120%)
+
+[sys] Model saved @ epoch 29...
+
+[Train] Epoch: 30 [12288/50000] Loss: 0.159297
+[Train] Epoch: 30 [24832/50000] Loss: 0.270998
+[Train] Epoch: 30 [37376/50000] Loss: 0.203371
+[Train] Epoch: 30 [15600/50000] Loss: 0.157356
+[Test] Average loss: 0.318 Accuracy: 8992/10000 (89.920%)
+
+[sys] Model saved @ epoch 30...
+
+[Train] Epoch: 31 [12288/50000] Loss: 0.239695
+[Train] Epoch: 31 [24832/50000] Loss: 0.144161
+[Train] Epoch: 31 [37376/50000] Loss: 0.166314
+[Train] Epoch: 31 [15600/50000] Loss: 0.308636
+[Test] Average loss: 0.354 Accuracy: 8820/10000 (88.200%)
+
+[sys] Model saved @ epoch 31...
+
+[Train] Epoch: 32 [12288/50000] Loss: 0.197574
+[Train] Epoch: 32 [24832/50000] Loss: 0.156469
+[Train] Epoch: 32 [37376/50000] Loss: 0.108949
+[Train] Epoch: 32 [15600/50000] Loss: 0.200868
+[Test] Average loss: 0.338 Accuracy: 8914/10000 (89.140%)
+
+[sys] Model saved @ epoch 32...
+
+[Train] Epoch: 33 [12288/50000] Loss: 0.157620
+[Train] Epoch: 33 [24832/50000] Loss: 0.130713
+[Train] Epoch: 33 [37376/50000] Loss: 0.189260
+[Train] Epoch: 33 [15600/50000] Loss: 0.246615
+[Test] Average loss: 0.354 Accuracy: 8873/10000 (88.730%)
+
+[sys] Model saved @ epoch 33...
+
+[Train] Epoch: 34 [12288/50000] Loss: 0.161774
+[Train] Epoch: 34 [24832/50000] Loss: 0.188957
+[Train] Epoch: 34 [37376/50000] Loss: 0.158516
+[Train] Epoch: 34 [15600/50000] Loss: 0.212576
+[Test] Average loss: 0.349 Accuracy: 8919/10000 (89.190%)
+
+[sys] Model saved @ epoch 34...
+
+[Train] Epoch: 35 [12288/50000] Loss: 0.172237
+[Train] Epoch: 35 [24832/50000] Loss: 0.169622
+[Train] Epoch: 35 [37376/50000] Loss: 0.180908
+[Train] Epoch: 35 [15600/50000] Loss: 0.164816
+[Test] Average loss: 0.343 Accuracy: 8922/10000 (89.220%)
+
+[sys] Model saved @ epoch 35...
+
+[Train] Epoch: 36 [12288/50000] Loss: 0.155443
+[Train] Epoch: 36 [24832/50000] Loss: 0.158968
+[Train] Epoch: 36 [37376/50000] Loss: 0.126316
+[Train] Epoch: 36 [15600/50000] Loss: 0.201814
+[Test] Average loss: 0.334 Accuracy: 8926/10000 (89.260%)
+
+[sys] Model saved @ epoch 36...
+
+[Train] Epoch: 37 [12288/50000] Loss: 0.127632
+[Train] Epoch: 37 [24832/50000] Loss: 0.138236
+[Train] Epoch: 37 [37376/50000] Loss: 0.228023
+[Train] Epoch: 37 [15600/50000] Loss: 0.264250
+[Test] Average loss: 0.358 Accuracy: 8872/10000 (88.720%)
+
+[sys] Model saved @ epoch 37...
+
+[Train] Epoch: 38 [12288/50000] Loss: 0.114787
+[Train] Epoch: 38 [24832/50000] Loss: 0.174449
+[Train] Epoch: 38 [37376/50000] Loss: 0.193878
+[Train] Epoch: 38 [15600/50000] Loss: 0.211405
+[Test] Average loss: 0.360 Accuracy: 8909/10000 (89.090%)
+
+[sys] Model saved @ epoch 38...
+
+[Train] Epoch: 39 [12288/50000] Loss: 0.156807
+[Train] Epoch: 39 [24832/50000] Loss: 0.134516
+[Train] Epoch: 39 [37376/50000] Loss: 0.151192
+[Train] Epoch: 39 [15600/50000] Loss: 0.153853
+[Test] Average loss: 0.335 Accuracy: 8960/10000 (89.600%)
+
+[sys] Model saved @ epoch 39...
