@@ -46,6 +46,7 @@ def train(model, device, train_loader, optimizer, epoch, loss_fn):
         output = model(data)
         loss = loss_fn(output, target)
         loss.backward()
+        nn.utils.clip_grad_norm_(model.parameters(), 1)
         optimizer.step()
         if(batch_idx + 1)%(len(train_loader) // 4) == 0: 
             print(f'[Train] Epoch: {epoch} [{batch_idx * len(data)}/{len(train_loader.dataset)}] Loss: {loss.item():.6f}')

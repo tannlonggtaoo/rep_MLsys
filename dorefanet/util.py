@@ -39,7 +39,9 @@ def get_id_fn(bitG): # get identity module (with special backward func) for grad
             s = float(2 ** bitG - 1)
             # Noise
             # if USECUDA:
-            N = (torch.rand(size=dr.shape) - 0.5).to('cuda') / s
+            # note here to('cuda') after the tensor is generated on CPU will cost sooooooo much time!!!!!!
+            # N = (torch.rand(size=dr.shape) - 0.5).to('cuda') / s
+            N = (torch.rand(size=dr.shape,device='cuda') - 0.5) / s
             # else:
             #     N = (torch.rand(size=dr.shape) - 0.5) / s
             dr = dr * 0.5 + 0.5 + N
@@ -83,13 +85,12 @@ class fg(nn.Module): # quantization function for gradients (MAY NOT BE USED)
     def __init__(self, bitG) -> None:
         super().__init__()
         self.bitG = bitG
-        self.quantize_fn = get_quantize_fn(bitG)
+        self.id_fn = get_id_fn(self.bitG)
 
     def forward(self, x):
         if self.bitG == 32:
             return x
-        id_fn = get_id_fn(self.bitG)
-        return id_fn(x)
+        return self.id_fn(x)
 
 # below: for exterior call
 

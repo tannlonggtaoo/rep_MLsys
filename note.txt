@@ -26,7 +26,14 @@ torch的doc写得其实不太好，找到的几则中文资料反而更清楚
 
 原则上第一层和最后一层都不应量化，不过本实现忘了这件事（悲
 
-关于dorefanet：它关于grad quant的办法仅在没有shortcut时被使用了（然而它resnet-dorefa的实现里面还装作无事发生一样取了nbits_G参数，我的实现就简单地直接在每个卷积层都加个梯度量化环境
+关于dorefanet：它关于grad quant的办法仅在没有shortcut时被使用了（然而它resnet-dorefa的实现里面还装作无事发生一样取了nbits_G参数，我的实现就简单地直接在每个卷积层都加个梯度量化环境。另外，这个梯度量化似乎对GPU非常不友好（cuda没法打满）
 
 静态成员函数不需要self参数，但torch的自定义forward方法若为静态则必须把第一个参数指定为ctx（context），用于传输有用的信息
 
+* 注意：运行很慢且CUDA打不满时检查是否有多余的数据搬运（to cuda），dorefanet一开始的实现就犯了这个错误
+
+位宽很低的时候不要用较大的lr否则容易跑飞/不收敛
+
+resnet18指用在imagenet的resnet，而resnet20是用在cifar上的resnet，减少了一些pooling环节。这个项目里面的Resnet都是Resnet18的魔改版，性能和Resnet18在同一档次（CIFAR-10上94%左右）
+
+DoReFaNet梯度量化位宽较低的时候非常不稳定，很容易梯度爆炸nan（用相同训练设置时而收敛时而不收敛）

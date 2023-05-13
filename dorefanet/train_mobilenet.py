@@ -2,8 +2,8 @@ import torch
 from torchvision import datasets, transforms
 import torch.nn as nn
 import torch.optim as optim
-from torch.utils.data import DataLoader, ConcatDataset
-from resnet20 import NaiveResnet20
+from torch.utils.data import DataLoader
+from mobilebetv2 import NaiveMobileNetV2
 import os
 import re
 import numpy as np
@@ -38,19 +38,15 @@ def getloader(batch_size, num_workers, mode='both'):
     if mode == 'test':
         return testloader
     
-def train(model, device, train_loader, optimizer, epoch, loss_fn, lamda):
+def train(model, device, train_loader, optimizer, epoch, loss_fn):
     model.train()
     for batch_idx, (data, target) in enumerate(train_loader):
         data, target = data.to(device), target.to(device)
         optimizer.zero_grad()
         output = model(data)
         loss = loss_fn(output, target)
-        reg = 0.0
-        for name,param in model.named_parameters():
-            if "alpha" in name:
-                reg += torch.pow(param, 2)
-        loss += lamda * reg
         loss.backward()
+        nn.utils.clip_grad_norm_(model.parameters(), 1) # for robustness
         optimizer.step()
         if(batch_idx + 1)%(len(train_loader) // 3) == 0: 
             print(f'[Train] Epoch: {epoch} [{batch_idx * len(data)}/{len(train_loader.dataset)}] Loss: {loss.item():.6f}')
@@ -71,7 +67,7 @@ def test(model, device, test_loader, loss_fn = nn.CrossEntropyLoss(reduction='su
     test_loss /= len(test_loader.dataset)
     if verbose:
         print(f'[Test] Average loss: {test_loss:.3f} Accuracy: {correct}/{len(test_loader.dataset)} ({100 * correct / len(test_loader.dataset):.3f}%)\n')
-    return test_loss, correct / len(test_loader.dataset)
+    return test_loss
 
 def loadparam(ckpt_path):
     files = os.listdir(ckpt_path)
@@ -81,44 +77,43 @@ def loadparam(ckpt_path):
     ckpt = torch.load(load_path)
     return ckpt, begin_epoch
 
-def pact_examine(bitW,bitA):
+def resnet_examine(bitW,bitA,bitG):
 
-    batch_size = 128 # a little different
-    n_epoch = 140
+    batch_size = 96 # a little different
+    n_epoch = 40
     num_workers = 4
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     train_loader, test_loader = getloader(batch_size,num_workers)
 
-    model = NaiveResnet20(n_class=10,bitW=bitW,bitA=bitA)
+    model = NaiveMobileNetV2(n_class=10,bitW=bitW,bitA=bitA,bitG=bitG)
     model.to(device)
     resume_if_ckpt_exists = False
     begin_epoch = 0 # will be overwritten if previous ckpt is loaded
-    ckpt_path = './pact/models/resnet20'
+    ckpt_path = './dorefanet/models/mobilenetv2'
 
-    folder_path = os.path.join(ckpt_path, f'W{bitW}_A{bitA}_reset')
+    if (resume_if_ckpt_exists):
+        ckpt, begin_epoch = loadparam(ckpt_path)
+        model.load_state_dict(ckpt)
+
+    folder_path = os.path.join(ckpt_path, f'W{bitW}_A{bitA}_G{bitG}')
     if not os.path.exists(folder_path):
         os.mkdir(folder_path)
 
-    if (resume_if_ckpt_exists):
-        ckpt, begin_epoch = loadparam(folder_path)
-        model.load_state_dict(ckpt)
-
     optimizer = optim.SGD(model.parameters(), lr=0.1, momentum=0.9, weight_decay=5e-4)
-    scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[60, 120])
+    scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[20])
     loss_fn = nn.CrossEntropyLoss()
     loss_fn_test = nn.CrossEntropyLoss(reduction='sum')
-    lamda = 0.0002
 
     for epoch in range(begin_epoch, begin_epoch + n_epoch):
-        train(model, device, train_loader, optimizer, epoch, loss_fn, lamda)
-        testloss, acc = test(model, device, test_loader, loss_fn_test)
+        train(model, device, train_loader, optimizer, epoch, loss_fn)
+        testloss = test(model, device, test_loader, loss_fn_test)
         
-        torch.save(model.state_dict(), os.path.join(folder_path, f'epoch{epoch}_loss{testloss:.6f}_acc{100*acc:.3}.pth'))
+        torch.save(model.state_dict(), os.path.join(folder_path, f'epoch{epoch}_loss{testloss:.6f}.pth'))
         print(f"[sys] Model saved @ epoch {epoch}...\n")
         scheduler.step()
 
 if __name__ == "__main__":
-    for bitW,bitA in [[6,6],[5,5],[4,4],[3,3],[2,2]]:
-        print(f'[sys] bitW {bitW}, bitA {bitA} ------------------------------------')
-        pact_examine(bitW,bitA)
+    for bitW,bitA,bitG in [[6,6,6]]:
+        print(f'[sys] bitW {bitW}, bitA {bitA}, bitG {bitG} ------------------------------------')
+        resnet_examine(bitW,bitA,bitG)

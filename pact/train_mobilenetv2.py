@@ -92,20 +92,22 @@ def pact_examine(bitW,bitA):
 
     model = NaiveMobileNetV2(n_class=10,bitW=bitW,bitA=bitA)
     model.to(device)
-    resume_if_ckpt_exists = False
+    resume_if_ckpt_exists = True
     begin_epoch = 0 # will be overwritten if previous ckpt is loaded
     ckpt_path = './pact/models/mobilenetv2'
-
-    if (resume_if_ckpt_exists):
-        ckpt, begin_epoch = loadparam(ckpt_path)
-        model.load_state_dict(ckpt)
-
-    folder_path = os.path.join(ckpt_path, f'W{bitW}_A{bitA}')
+    folder_path = os.path.join(ckpt_path, f'W{bitW}_A{bitA}_reset')
     if not os.path.exists(folder_path):
         os.mkdir(folder_path)
 
-    optimizer = optim.SGD(model.parameters(), lr=0.1, momentum=0.9, weight_decay=5e-4)
-    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min', verbose=True)
+    if (resume_if_ckpt_exists):
+        ckpt, begin_epoch = loadparam(folder_path)
+        model.load_state_dict(ckpt)
+
+    
+
+    optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.9, weight_decay=5e-4)
+    #optimizer = optim.SGD(model.parameters(), lr=0.1, momentum=0.9, weight_decay=5e-4)
+    scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[30, 40])
     loss_fn = nn.CrossEntropyLoss()
     loss_fn_test = nn.CrossEntropyLoss(reduction='sum')
     lamda = 0.0002
@@ -116,7 +118,7 @@ def pact_examine(bitW,bitA):
         
         torch.save(model.state_dict(), os.path.join(folder_path, f'epoch{epoch}_loss{testloss:.6f}_acc{100 * acc:.3f}.pth'))
         print(f"[sys] Model saved @ epoch {epoch}...\n")
-        scheduler.step(testloss)
+        scheduler.step()
 
 if __name__ == "__main__":
     for bitW,bitA in [[6,6],[5,5],[4,4],[3,3],[2,2]]:

@@ -21,8 +21,10 @@ def getloader(batch_size, num_workers):
     ])
 
     trainset = datasets.SVHN(root='.\dataset\SVHN', split='train', download=True, transform=transform_train)
-    extraset = datasets.SVHN(root='.\dataset\SVHN', split='extra', download=True, transform=transform_train)
-    trainloader = DataLoader(ConcatDataset([trainset, extraset]), batch_size=batch_size, shuffle=True, num_workers=num_workers)
+    #extraset = datasets.SVHN(root='.\dataset\SVHN', split='extra', download=True, transform=transform_train)
+    #trainloader = DataLoader(ConcatDataset([trainset, extraset]), batch_size=batch_size, shuffle=True, num_workers=num_workers)
+    trainloader = DataLoader(trainset, batch_size=batch_size, shuffle=True, num_workers=num_workers)
+
 
     testset = datasets.SVHN(root='.\dataset\SVHN', split='test', download=True, transform=transform_test)
     testloader = DataLoader(testset, batch_size=batch_size, shuffle=False, num_workers=num_workers)
@@ -38,8 +40,9 @@ def train(model, device, train_loader, optimizer, epoch, loss_fn):
         output = model(data)
         loss = loss_fn(output, target)
         loss.backward()
+        nn.utils.clip_grad_norm_(model.parameters(), 1)
         optimizer.step()
-        if(batch_idx + 1)%(len(train_loader) // 8) == 0: 
+        if(batch_idx + 1)%(len(train_loader) // 3) == 0: 
             print(f'[Train] Epoch: {epoch} [{batch_idx * len(data)}/{len(train_loader.dataset)}] Loss: {loss.item():.6f}')
 
 def test(model, device, test_loader, loss_fn = nn.CrossEntropyLoss(reduction='sum'), verbose = True):
@@ -58,7 +61,7 @@ def test(model, device, test_loader, loss_fn = nn.CrossEntropyLoss(reduction='su
     test_loss /= len(test_loader.dataset)
     if verbose:
         print(f'[Test] Average loss: {test_loss:.3f} Accuracy: {correct}/{len(test_loader.dataset)} ({100 * correct / len(test_loader.dataset):.3f}%)\n')
-    return test_loss
+    return test_loss, correct / len(test_loader.dataset)
 
 def loadparam(ckpt_path):
     files = os.listdir(ckpt_path)
@@ -71,7 +74,7 @@ def loadparam(ckpt_path):
 def SVHN_A_examine(bitW,bitA,bitG):
 
     batch_size = 1024 # a little different
-    n_epoch = 5
+    n_epoch = 50
     num_workers = 0
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -87,24 +90,24 @@ def SVHN_A_examine(bitW,bitA,bitG):
         ckpt, begin_epoch = loadparam(ckpt_path)
         model.load_state_dict(ckpt)
 
-    folder_path = os.path.join(ckpt_path, f'W{bitW}_A{bitA}_G{bitG}')
+    folder_path = os.path.join(ckpt_path, f'W{bitW}_A{bitA}_G{bitG}_reset')
     if not os.path.exists(folder_path):
         os.mkdir(folder_path)
 
     optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9, weight_decay=5e-4)
-    scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer,0.9,verbose=True)
+    scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer,milestones=[20,40],verbose=True)
     loss_fn = nn.CrossEntropyLoss()
     loss_fn_test = nn.CrossEntropyLoss(reduction='sum')
 
     for epoch in range(begin_epoch, begin_epoch + n_epoch):
         train(model, device, train_loader, optimizer, epoch, loss_fn)
-        testloss = test(model, device, test_loader, loss_fn_test)
+        testloss, acc = test(model, device, test_loader, loss_fn_test)
         
-        torch.save(model.state_dict(), os.path.join(folder_path, f'epoch{epoch}_loss{testloss:.6f}.pth'))
+        torch.save(model.state_dict(), os.path.join(folder_path, f'epoch{epoch}_loss{testloss:.6f}_acc{acc:.3f}.pth'))
         print(f"[sys] Model saved @ epoch {epoch}...\n")
         scheduler.step()
 
 if __name__ == "__main__":
-    for bitW,bitA,bitG in [[2,2,2],[6,6,6]]:
+    for bitW,bitA,bitG in [[6,6,2],[6,6,6],[6,6,32],[2,2,2],[2,2,6],[2,2,32]]:
         print(f'[sys] bitW {bitW}, bitA {bitA}, bitG {bitG} ------------------------------------')
         SVHN_A_examine(bitW,bitA,bitG)
