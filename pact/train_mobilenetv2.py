@@ -92,7 +92,7 @@ def pact_examine(bitW,bitA):
 
     model = NaiveMobileNetV2(n_class=10,bitW=bitW,bitA=bitA)
     model.to(device)
-    resume_if_ckpt_exists = True
+    resume_if_ckpt_exists = False
     begin_epoch = 0 # will be overwritten if previous ckpt is loaded
     ckpt_path = './pact/models/mobilenetv2'
     folder_path = os.path.join(ckpt_path, f'W{bitW}_A{bitA}_reset')
@@ -106,7 +106,6 @@ def pact_examine(bitW,bitA):
     
 
     optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.9, weight_decay=5e-4)
-    #optimizer = optim.SGD(model.parameters(), lr=0.1, momentum=0.9, weight_decay=5e-4)
     scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[30, 40])
     loss_fn = nn.CrossEntropyLoss()
     loss_fn_test = nn.CrossEntropyLoss(reduction='sum')

@@ -38,12 +38,7 @@ def get_id_fn(bitG): # get identity module (with special backward func) for grad
             dr = dr / dr_abs_max0
             s = float(2 ** bitG - 1)
             # Noise
-            # if USECUDA:
-            # note here to('cuda') after the tensor is generated on CPU will cost sooooooo much time!!!!!!
-            # N = (torch.rand(size=dr.shape) - 0.5).to('cuda') / s
             N = (torch.rand(size=dr.shape,device='cuda') - 0.5) / s
-            # else:
-            #     N = (torch.rand(size=dr.shape) - 0.5) / s
             dr = dr * 0.5 + 0.5 + N
             dr = torch.clip(dr, 0, 1)
             quantize_fn = get_quantize_fn(bitG)
